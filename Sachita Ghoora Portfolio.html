@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover, nav a.active-link {
+            background-color: #4A90E2;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        section {
+            display: none;
+            padding: 20px;
+        }
+        section.active {
+            display: block;
+        }
+    </style>
+    <script>
+        function showSection(id, event) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active-link');
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('home', event)" class="active-link">Home</a>
+        <a href="#" onclick="showSection('projects', event)">Projects</a>
+        <a href="#" onclick="showSection('contact', event)">Contact</a>
+    </nav>
+
+    <section id="home" class="active">
+        <div class="container">
+            <div class="box">
+                <img src="C:\Users\sachi\OneDrive\Desktop\sachita\Web Programming and Design\Assignment\Images\Image1.jpeg" alt="Image 1">
+                <h2>Brief introduction of myself</h2>
+                <p>A reflection of my journey and experiences. Born on an island embraced by crystal-clear waters and sun-kissed beaches, surrounded by natural beauty that inspired my creativity.Currently i am enrolled in the Computer programming diploma at Humber College Canada. In scope to learn coding language and put practise of the knowlede i would be gaining from this course.</p>
+            </div>
+            <div class="box">
+                <img src="C:\Users\sachi\OneDrive\Desktop\sachita\Web Programming and Design\Assignment\Images\Image2.jpg" alt="Image 2">
+                <h2>My Interest in Fitness</h2>
+                <p>Fitness challenges me to push beyond my limits, building discipline, resilience, and a strong mindset. It boosts my energy and confidence daily.</p>
+            </div>
+            <div class="box">
+                <img src="C:\Users\sachi\OneDrive\Desktop\sachita\Web Programming and Design\Assignment\Images\Image3.jpeg" alt="Image 3">
+                <h2>My Hobbies</h2>
+                <p>Dancing allows me to express myself freely. Swimming keeps me fit and refreshed, while reading fuels my imagination and knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="box">
+                <h2>Future Projects</h2>
+                <ol>
+                    <li>To-Do List App</li>
+                    <li>Calculator</li>
+                    <li>Personal Portfolio Website: Showcasing your projects, skills, and resume.</li>
+                    <li>Weather App: Fetch real-time weather data</li>
+                    <li>Quiz Application to help students learn</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="box">
+                <h2>Contact Information</h2>
+                <p>Email: sachitaghoora1991@gmail.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <h3>Follow us on:</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
